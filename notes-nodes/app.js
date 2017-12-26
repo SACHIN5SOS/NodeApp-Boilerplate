@@ -28,6 +28,7 @@ console.log('Command ', command);
 console.log('Processse',process.argv);  //procee.argv 
 */
 
+//npm install yargs@4.7.1 --save  
 const yargs = require('yargs');  //It is good for key value pair.. Like   for   node app.js add --tittle "Success"  
 
 const yarg_input = yargs.argv; //for yarg input/* 
