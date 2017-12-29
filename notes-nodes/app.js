@@ -37,7 +37,14 @@ var command = yarg_input._[0];    //for taking user input alternative is process
 console.log('Yargs": ',yarg_input);    //printg yarg output like Yarrgs = ['_': tittle : 'Sucess']
 
 if(command==='add'){
-    notes.addNote(yarg_input.title,yarg_input.body);
+   var note =  notes.addNote(yarg_input.title,yarg_input.body);
+    if (note===undefined){
+        console.log('duplicate title ennterd');
+    }
+    else
+    {
+        console.log(note.title+' is the title of new node');
+    }
 }
 else if(command==='list')
 {
