@@ -51,7 +51,16 @@ else if(command==='list')
     notes.getAll();
 }
 else if(command=='read'){
-    notes.getNote(yarg_input.title);
+    var note = notes.getNote(yarg_input.title);
+    if(note===undefined)
+    {
+        console.log('note is not present notes file');
+    }
+    else
+    {
+        console.log('Note Found:-')
+        notes.logNote(note);
+    }
 }
 else if(command=='remove')
 {
