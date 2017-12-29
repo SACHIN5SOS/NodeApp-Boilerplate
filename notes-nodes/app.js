@@ -43,7 +43,7 @@ if(command==='add'){
     }
     else
     {
-        console.log(note.title+' is the title of new node');
+        console.log(`${note.title} is the new title`);
     }
 }
 else if(command==='list')
