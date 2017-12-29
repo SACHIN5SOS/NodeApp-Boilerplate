@@ -53,9 +53,17 @@ else if(command==='list')
 else if(command=='read'){
     notes.getNote(yarg_input.title);
 }
-else if(command=='renove')
+else if(command=='remove')
 {
-    notes.removeNote(yarg_input.title);
+    var removedNote= notes.removeNote(yarg_input.title);
+    if(removedNote===true)
+    {
+        console.log(`${yarg_input.title} is removed`);
+    }
+    else
+    {
+        console.log('note was not there');
+    }
 }
 else
 console.log('command not recognised');
