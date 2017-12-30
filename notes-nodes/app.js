@@ -1,4 +1,4 @@
-console.log('Starting app.');
+// console.log('Starting app.');
 
 // const fs = require('fs');
 
@@ -34,7 +34,7 @@ const yargs = require('yargs');  //It is good for key value pair.. Like   for   
 const yarg_input = yargs.argv; //for yarg input/* 
 var command = yarg_input._[0];    //for taking user input alternative is process.argv[2];
 
-console.log('Yargs": ',yarg_input);    //printg yarg output like Yarrgs = ['_': tittle : 'Sucess']
+// console.log('Yargs": ',yarg_input);    //printg yarg output like Yarrgs = ['_': tittle : 'Sucess']
 
 if(command==='add'){
    var note =  notes.addNote(yarg_input.title,yarg_input.body);
@@ -48,7 +48,8 @@ if(command==='add'){
 }
 else if(command==='list')
 {
-    notes.getAll();
+    var allNotes=notes.getAll();
+    allNotes.forEach((note) => notes.logNote(note));
 }
 else if(command=='read'){
     var note = notes.getNote(yarg_input.title);
