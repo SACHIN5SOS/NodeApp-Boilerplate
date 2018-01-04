@@ -2,8 +2,11 @@ const express= require('express');
 const hbs = require('hbs');   //handlebars
 var app=express();
 app.set('viewengine','hbs');
-hbs.registerPartials(__dirname+'/public/views');   //For using Partials in handlebars
+hbs.registerPartials(__dirname+'/views/partials');   //For using Partials in handlebars
 app.use(express.static(__dirname + '/public'));
+hbs.registerHelper('screamIt',(text)=>{
+    return text.toUpperCase()
+})
 app.get('/',(req,res)=>{
     // res.send({
     //  name : 'Sachin',
@@ -14,7 +17,8 @@ app.get('/',(req,res)=>{
     // });
     res.render('home.hbs',{
         pageTitle:'Home Page',
-        currentYear: new Date().getFullYear()
+        currentYear: new Date().getFullYear(),
+        welcomeMessage: 'Welcome to my page'
     });
 });
 app.get('/about',(req,res)=>{
