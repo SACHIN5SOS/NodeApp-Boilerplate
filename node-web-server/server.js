@@ -2,6 +2,7 @@ const express= require('express');
 const hbs = require('hbs');   //handlebars
 var app=express();
 app.set('viewengine','hbs');
+hbs.registerPartials(__dirname+'/public/views');   //For using Partials in handlebars
 app.use(express.static(__dirname + '/public'));
 app.get('/',(req,res)=>{
     // res.send({
