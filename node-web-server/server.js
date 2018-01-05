@@ -2,6 +2,7 @@ const express= require('express');
 const hbs = require('hbs');   //handlebars
 const fs= require('fs');
 
+const port=process.env.PORT || 3000;
 var app=express();
 
 app.set('viewengine','hbs');
@@ -42,9 +43,9 @@ app.get('/',(req,res)=>{
 });
 
 app.get('/about',(req,res)=>{
- res.render('about.hbs',{
-     pageTitle: 'About Page',
-     currentYear: new Date().getFullYear()
+res.render('about.hbs',{
+    pageTitle: 'About Page',
+    currentYear: new Date().getFullYear()
  });
 });
 
@@ -54,8 +55,6 @@ app.get('/bad',(req,res)=>{
     })
 });
 
-app.listen(3000,()=>{
-    console.log('Server is at port 3000');
+app.listen(port,()=>{
+    console.log(`Server is at port ${port}`);  
 });
-
-
