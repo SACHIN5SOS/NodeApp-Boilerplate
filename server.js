@@ -48,8 +48,6 @@ app.get('/',(req,res)=>{
     });
 });
 
-
-
 app.get('/about',(req,res)=>{
 res.render('about.hbs',{
     pageTitle: 'About Page',
@@ -70,6 +68,12 @@ app.get('/projects',(req,res)=>{
     });
 });
 
+app.get('/contact',(req,res)=>{
+    res.render('contact.hbs',{
+       pageTitle:'Contact me',
+       email:'sachinb443@gmail.com' 
+    });
+});
 
 app.listen(port,()=>{
     console.log(`Server is at port ${port}`);  
